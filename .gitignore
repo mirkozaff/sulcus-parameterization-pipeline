@@ -132,9 +132,12 @@ dmypy.json
 # Brainvisa dir
 bv_dir*
 brainvisa*
+!brainvisa_templates
 
 # Freesurfer dir
 freesurfer/
+
+!.gitignore
 
 
 
