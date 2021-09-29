@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<minf expander="brainvisa-history_2.0">
+<f type="bvproc">
+  <f type="Uuid">
+    <s>31dd6a2e-5514-768b-ccdc-f8cafd8ebc52</s>
+  </f>
+  <d>
+    <d name="window">
+      <l length="2" name="position">
+        <n>0</n>
+        <n>0</n>
+      </l>
+      <l length="2" name="size">
+        <n>600</n>
+        <n>801</n>
+      </l>
+    </d>
+    <s name="pipelineStructure">spam_recognition</s>
+    <d name="parameters">
+      <d name="default">
+        <s name="output_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto.arg</s>
+      </d>
+      <d name="selected">
+        <s name="data_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/LSUBJECT.arg</s>
+      </d>
+    </d>
+    <d name="executionNodes">
+      <d name="local_or_markovian">
+        <n name="selected">1</n>
+        <s name="name">Local or Markovian</s>
+        <d name="executionNodes">
+          <d name="local_recognition">
+            <n name="selected">1</n>
+            <s name="name">SPAM recognition, local registration</s>
+            <d name="parameters">
+              <d name="default">
+                <s name="labels_translation_map">BVHOME/share/brainvisa-share-4.5/nomenclature/translation/sulci_model_2008.trl</s>
+                <s name="translation_priors">BVHOME/share/brainvisa-share-4.5/models/models_2008/descriptive_models/segments/locally_from_global_registred_spam_left/gaussian_translation_trm_priors.dat</s>
+                <none name="initial_transformation"/>
+                <s name="local_referentials">BVHOME/share/brainvisa-share-4.5/models/models_2008/descriptive_models/segments/locally_from_global_registred_spam_left/local_referentials.dat</s>
+                <s name="output_local_transformations">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto_global_TO_local</s>
+                <s name="labels_priors">BVHOME/share/brainvisa-share-4.5/models/models_2008/descriptive_models/labels_priors/frequency_segments_priors_left/frequency_segments_priors.dat</s>
+                <s name="angle_priors">BVHOME/share/brainvisa-share-4.5/models/models_2008/descriptive_models/segments/locally_from_global_registred_spam_left/vonmises_angle_trm_priors.dat</s>
+                <s name="output_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto.arg</s>
+                <s name="data_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto.arg</s>
+                <s name="model">BVHOME/share/brainvisa-share-4.5/models/models_2008/descriptive_models/segments/locally_from_global_registred_spam_left/spam_distribs.dat</s>
+                <s name="posterior_probabilities">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto_proba.csv</s>
+                <s name="direction_priors">BVHOME/share/brainvisa-share-4.5/models/models_2008/descriptive_models/segments/locally_from_global_registred_spam_left/bingham_direction_trm_priors.dat</s>
+                <s name="global_transformation">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto_Tal_TO_SPAM.trm</s>
+              </d>
+              <d name="selected">
+              </d>
+            </d>
+            <d name="executionNodes">
+            </d>
+          </d>
+          <d name="markovian_recognition">
+            <n name="selected">0</n>
+            <s name="name">SPAM recognition, Markovian model</s>
+            <d name="parameters">
+              <d name="default">
+                <s name="labels_translation_map">BVHOME/share/brainvisa-share-4.5/nomenclature/translation/sulci_model_2008.trl</s>
+                <none name="initial_transformation"/>
+                <s name="labels_priors">BVHOME/share/brainvisa-share-4.5/models/models_2008/descriptive_models/labels_priors/frequency_segments_priors_left/frequency_segments_priors.dat</s>
+                <s name="segments_relations_model">BVHOME/share/brainvisa-share-4.5/models/models_2008/descriptive_models/segments_relations/mindist_relations_left/gamma_exponential_mixture_distribs.dat</s>
+                <s name="output_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto.arg</s>
+                <s name="data_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto.arg</s>
+                <s name="model">BVHOME/share/brainvisa-share-4.5/models/models_2008/descriptive_models/segments/global_registered_spam_left/spam_distribs.dat</s>
+                <s name="posterior_probabilities">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto_proba.csv</s>
+                <s name="global_transformation">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto_Tal_TO_SPAM.trm</s>
+              </d>
+              <d name="selected">
+              </d>
+            </d>
+            <d name="executionNodes">
+            </d>
+          </d>
+        </d>
+      </d>
+      <d name="global_recognition">
+        <n name="selected">1</n>
+        <s name="name">SPAM recognition, global registration</s>
+        <d name="parameters">
+          <d name="default">
+            <s name="labels_translation_map">BVHOME/share/brainvisa-share-4.5/nomenclature/translation/sulci_model_2008.trl</s>
+            <none name="initial_transformation"/>
+            <s name="output_t1_to_global_transformation">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto_T1_TO_SPAM.trm</s>
+            <s name="labels_priors">BVHOME/share/brainvisa-share-4.5/models/models_2008/descriptive_models/labels_priors/frequency_segments_priors_left/frequency_segments_priors.dat</s>
+            <s name="output_transformation">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto_Tal_TO_SPAM.trm</s>
+            <s name="output_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto.arg</s>
+            <s name="model_type">Global registration</s>
+            <s name="model">BVHOME/share/brainvisa-share-4.5/models/models_2008/descriptive_models/segments/global_registered_spam_left/spam_distribs.dat</s>
+            <s name="posterior_probabilities">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto_proba.csv</s>
+          </d>
+          <d name="selected">
+            <s name="data_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/LSUBJECT.arg</s>
+          </d>
+        </d>
+        <d name="executionNodes">
+        </d>
+      </d>
+    </d>
+  </d>
+</f>
+</minf>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<minf expander="brainvisa-history_2.0">
+<f type="bvproc">
+  <f type="Uuid">
+    <s>170a1a00-0698-d43c-aa16-4080e972f01b</s>
+  </f>
+  <d>
+    <d name="window">
+      <l length="2" name="position">
+        <n>1442</n>
+        <n>401</n>
+      </l>
+      <l length="2" name="size">
+        <n>600</n>
+        <n>801</n>
+      </l>
+    </d>
+    <s name="pipelineStructure">morphometry</s>
+    <d name="parameters">
+      <d name="default">
+        <s name="output_filename_prefix">morpho_</s>
+        <s name="region">{ 'value' : {'model': 'BVHOME/share/brainvisa-share-4.4/models/models_2008/discriminative_models/3.1/Rfolds_noroots_fd4_native_2010/Rfolds-model-fd4_native.arg', 'nomenclature': 'BVHOME/share/brainvisa-share-4.4/nomenclature/hierarchy/sulcal_root_colors.hie'}, 'fileDI' : WriteDiskItem( 'Labels selection', ('Selection',) ) }</s>
+        <s name="nomenclature">BVHOME/share/brainvisa-share-4.4/nomenclature/hierarchy/sulcal_root_colors.hie</s>
+        <s name="output_directory">OUTDIR</s>
+        <false name="run_dataMind"/>
+        <s name="region_type">label</s>
+        <s name="label_attribute">auto</s>
+      </d>
+      <d name="selected">
+        <s name="model">BVHOME/share/brainvisa-share-4.4/models/models_2008/discriminative_models/3.1/Rfolds_noroots_fd4_native_2010/Rfolds-model-fd4_native.arg</s>
+        <l length="1" name="data_graphs">
+          <s>BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/RSUBJECT_default_session_auto.arg</s>
+        </l>
+      </d>
+    </d>
+  </d>
+</f>
+</minf>

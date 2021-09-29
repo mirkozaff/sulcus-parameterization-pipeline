@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<minf expander="brainvisa-history_2.0">
+<f type="bvproc">
+  <f type="Uuid">
+    <s>a31ca77a-0831-691b-1b0e-7af6ab6e976d</s>
+  </f>
+  <d>
+    <d name="window">
+      <l length="2" name="position">
+        <n>323</n>
+        <n>75</n>
+      </l>
+      <l length="2" name="size">
+        <n>600</n>
+        <n>801</n>
+      </l>
+    </d>
+    <s name="pipelineStructure">ParameterizeSulcus2015</s>
+    <d name="parameters">
+      <d name="default">
+        <s name="texture_param1">BVDIR/subjects/SUBJECT/sulci/SUBJECT_L_stsleft-y.tex</s>
+        <s name="orientation">Top-&gt;Bottom</s>
+        <s name="depth_profile">BVDIR/subjects/SUBJECT/sulci/SUBJECT_L_stsleft-depth.txt</s>
+        <s name="coordinates_grid">BVDIR/subjects/SUBJECT/sulci/SUBJECT_L_stsleft-grid.mesh.mesh</s>
+        <s name="mri">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.nii.gz</s>
+        <n name="offset">0</n>
+        <n name="dilation">1.0</n>
+      </d>
+      <d name="selected">
+        <s name="graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto.arg</s>
+        <s name="label_attributes">label</s>
+        <s name="sulcus_mesh">BVDIR/subjects/SUBJECT/sulci/SUBJECT_L_stsleft.mesh</s>
+        <s name="label_values">S.T.s._left</s>
+      </d>
+    </d>
+  </d>
+</f>
+</minf>

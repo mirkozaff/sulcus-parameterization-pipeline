@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<minf expander="brainvisa-history_2.0">
+<f type="bvproc">
+  <f type="Uuid">
+    <s>f969de4d-bb43-a3e6-82e5-b431c444841f</s>
+  </f>
+  <d>
+    <d name="window">
+      <l length="2" name="position">
+        <n>488</n>
+        <n>238</n>
+      </l>
+      <l length="2" name="size">
+        <n>881</n>
+        <n>810</n>
+      </l>
+    </d>
+    <s name="pipelineStructure">ParameterizeSulcus2015_old</s>
+    <d name="parameters">
+      <d name="default">
+        <s name="texture_param1">/data/TWINS/newQTIM/QTIM_processing_Test/QTIM_bv_subjects/subjects/8049501_DM/sulci/8049501_DM_L_SC_left-y.tex</s>
+        <s name="orientation">Top-&gt;Bottom</s>
+        <s name="depth_profile">/data/TWINS/newQTIM/QTIM_processing_Test/QTIM_bv_subjects/subjects/8049501_DM/sulci/8049501_DM_L_SC_left-depth.txt</s>
+        <s name="coordinates_grid">/data/TWINS/newQTIM/QTIM_processing_Test/QTIM_bv_subjects/subjects/8049501_DM/sulci/8049501_DM_L_SC_left-grid.mesh.mesh</s>
+        <s name="mri">/data/TWINS/newQTIM/QTIM_processing_Test/QTIM_bv_subjects/subjects/8049501_DM/t1mri/default_acquisition/default_analysis/nobias_8049501_DM.nii.gz</s>
+        <n name="offset">0</n>
+        <s name="label_attributes">name</s>
+        <n name="dilation">1.0</n>
+      </d>
+      <d name="selected">
+        <s name="graph">/data/TWINS/newQTIM/QTIM_processing_Test/QTIM_bv_subjects/subjects/8049501_DM/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/L8049501_DM_default_session_auto.arg</s>
+        <s name="sulcus_mesh">/data/TWINS/newQTIM/QTIM_processing_Test/QTIM_bv_subjects/subjects/8049501_DM/sulci/8049501_DM_L_SC_left.mesh</s>
+        <s name="label_values">S.C._left</s>
+      </d>
+    </d>
+  </d>
+</f>
+</minf>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<minf expander="brainvisa-history_2.0">
+<f type="bvproc">
+  <f type="Uuid">
+    <s>81718ec4-a219-442a-1cb5-3915e37b0363</s>
+  </f>
+  <d>
+    <d name="window">
+      <l length="2" name="position">
+        <n>1354</n>
+        <n>390</n>
+      </l>
+      <l length="2" name="size">
+        <n>600</n>
+        <n>801</n>
+      </l>
+    </d>
+    <s name="pipelineStructure">sulcigraphmorphometrybysubject</s>
+    <d name="parameters">
+      <d name="default">
+        <s name="use_attribute">label</s>
+        <s name="sulci_file">BVHOME/share/brainvisa-share-4.5/nomenclature/translation/sulci_default_list.json</s>
+        <s name="right_sulci_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/RSUBJECT_default_session_auto.arg</s>
+      </d>
+      <d name="selected">
+        <s name="sulcal_morpho_measures">BVDIR/subjects/SUBJECT/SUBJECT_sulcal_measure.csv</s>
+        <s name="left_sulci_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto.arg</s>
+      </d>
+    </d>
+  </d>
+</f>
+</minf>

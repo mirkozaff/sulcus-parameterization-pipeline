@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<minf expander="brainvisa-history_2.0">
+<f type="bvproc">
+  <f type="Uuid">
+    <s>d6d518f4-2335-19a0-474c-9900337171b1</s>
+  </f>
+  <d>
+    <d name="window">
+      <l length="2" name="position">
+        <n>140</n>
+        <n>167</n>
+      </l>
+      <l length="2" name="size">
+        <n>600</n>
+        <n>801</n>
+      </l>
+    </d>
+    <s name="pipelineStructure">ImportT1MRI</s>
+    <d name="parameters">
+      <d name="default">
+        <s name="referential">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition.referential</s>
+        <s name="attributes_merging">BrainVisa</s>
+        <s name="output_database">BVDIR</s>
+        <l name="selected_attributes_from_header">
+        </l>
+      </d>
+      <d name="selected">
+        <s name="input">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.nii</s>
+        <s name="output">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.nii.gz</s>
+      </d>
+    </d>
+  </d>
+</f>
+</minf>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<minf expander="brainvisa-history_2.0">
+<f type="bvproc">
+  <f type="Uuid">
+    <s>2148a6b1-034a-82e5-323e-a8b6d8e5a99c</s>
+  </f>
+  <d>
+    <d name="window">
+      <l length="2" name="position">
+        <n>583</n>
+        <n>60</n>
+      </l>
+      <l length="2" name="size">
+        <n>600</n>
+        <n>801</n>
+      </l>
+    </d>
+    <s name="pipelineStructure">Import_FROM_FreeSurfer_TO_Morpho</s>
+    <d name="parameters">
+      <d name="default">
+        <s name="normalization_transformation">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition_TO_Talairach-MNI.trm</s>
+        <s name="transform_to_scanner_based">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition_TO_Scanner_Based.trm</s>
+        <s name="Bias_corrected_output">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.nii.gz</s>
+        <s name="ribbon_image">FSDIR/SUBJECT/mri/ribbon.mgz</s>
+        <s name="Rgrey_white_output">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Rgrey_white_SUBJECT.nii.gz</s>
+        <s name="mean_curvature">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/mean_curvature_SUBJECT.nii.gz</s>
+        <s name="bias_field">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/biasfield_SUBJECT.nii.gz</s>
+        <s name="mni_referential">BVHOME/share/brainvisa-share-4.4/registration/Talairach-MNI_template-SPM.referential</s>
+        <s name="commissure_coordinates">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.APC</s>
+        <s name="Split_brain_output">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/voronoi_SUBJECT.nii.gz</s>
+        <none name="scanner_based_referential"/>
+        <s name="acpc_referential">BVHOME/share/brainvisa-share-4.4/registration/Talairach-AC_PC-Anatomist.referential</s>
+        <l length="1" name="transform_chain_ACPC_to_Normalized">
+          <s>BVHOME/share/brainvisa-share-4.4/transformation/talairach_TO_spm_template_novoxels.trm</s>
+        </l>
+        <s name="edges">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/edges_SUBJECT.nii.gz</s>
+        <s name="Lgrey_white_output">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Lgrey_white_SUBJECT.nii.gz</s>
+        <s name="variance">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/variance_SUBJECT.nii.gz</s>
+        <s name="Talairach_Auto">FSDIR/SUBJECT/mri/transforms/talairach.auto.xfm</s>
+        <s name="hfiltered">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/hfiltered_SUBJECT.nii.gz</s>
+        <s name="white_ridges">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/whiteridge_SUBJECT.nii.gz</s>
+        <s name="Talairach_transform">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition_TO_Talairach-ACPC.trm</s>
+        <s name="T1_referential">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition.referential</s>
+        <s name="histo_analysis">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.han</s>
+      </d>
+      <d name="selected">
+        <n name="use_t1pipeline">2</n>
+        <s name="T1_orig">FSDIR/SUBJECT/mri/orig.mgz</s>
+        <s name="T1_output">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.nii.gz</s>
+      </d>
+    </d>
+  </d>
+</f>
+</minf>
