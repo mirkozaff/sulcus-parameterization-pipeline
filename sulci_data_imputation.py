@@ -27,6 +27,7 @@ def z_score(df):
 
 def merge_dataframes():
 	subjects = [f for f in os.listdir(subjects_path) if (path.isdir(path.join(subjects_path, f))) and ('KK' in f)]
+	subjects.sort()
 
 	csv_path = path.join(BVDIR, 'subjects', subjects[0], 'by_subjevct_sulcal_measure.csv')
 	df = pd.read_csv(csv_path, delimiter=';')
@@ -73,7 +74,7 @@ def main():
 	plt.savefig('svm_conf.png', dpi=500)
 
 	# Create test set
-	test_size = 50
+	test_size = 200
 	y_true = df.tail(test_size).copy().values
 	df_test = df.tail(test_size).copy()
 	df.drop(df.tail(test_size).index, inplace = True)
