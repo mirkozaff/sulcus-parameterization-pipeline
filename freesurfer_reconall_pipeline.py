@@ -34,10 +34,10 @@ def reconall(subject):
 
 def pool_handler(subjects_list):
 	# Setting multi processing
-	n_processes = 25
-    p = Pool(n_processes)
+	n_processes = 45
+	p = Pool(n_processes)
 	# Inputs: (target function, list_of_inputs)
-    p.map(reconall, subjects_list)
+	p.map(reconall, subjects_list)
 
 if __name__ == '__main__': 
 	pool_handler(subjects)
