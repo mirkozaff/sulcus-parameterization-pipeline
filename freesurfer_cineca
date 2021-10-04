@@ -1,0 +1,20 @@
+#!/bin/bash
+#SBATCH --job-name=freesurfer_pipeline
+#SBATCH --output=freesurfer.out
+#SBATCH --error=freesurfer.err
+#SBATCH --mail-type=END
+#SBATCH --mail-user=mirko.zaffaroni@unito.it
+#SBATCH --time=72:00:00
+#SBATCH --nodes=25
+#SBATCH --ntasks-per-node=36
+#SBATCH --mem=10GB
+#SBATCH --partition=m100_usr_prod
+#SBATCH --account=IscrC_NEDIGI
+
+# script to run FreeSurfer
+export FREESURFER_HOME=/m100_work/IscrC_NEDIGI/freesurfer
+export SUBJECTS_DIR=$FREESURFER_HOME/subjects
+source $FREESURFER_HOME/SetUpFreeSurfer.sh
+
+# run recon all on all the subjects
+python3 freesurfer_reconall_pipeline.py
