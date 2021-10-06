@@ -154,10 +154,10 @@ def run_sulcal_measures(SUBJECT):
 def main():
 	#Settings
 	parser = argparse.ArgumentParser(description='BrainVisa Cortical Surface pipeline')
-	parser.add_argument('--subject', '-s', type=str, default='KKI2009-28-MPRAGE', #required = True,
-						help="subject ID")
+	parser.add_argument('--subject', '-s', type=str, required = True, help="subject ID")
 	args = parser.parse_args()
 
+	'''
 	subjects_path = os.path.join(BVDIR, 'subjects')
 	subjects = [f for f in os.listdir(subjects_path) if (os.path.isdir(os.path.join(subjects_path, f))) and ('KK' in f)]
 
@@ -173,6 +173,21 @@ def main():
 			run_left_sulci_recognition(sbj)
 			run_right_sulci_recognition(sbj)
 		run_sulcal_measures(sbj)
+	'''
+
+	sbj =  args.subject
+
+	#Brainvisa pipeline
+	print(f'*** {sbj} Morphologist pipeline started ***\n')
+	folder_creation(sbj)
+	#import_freesurfer(sbj)
+	if BV_VER == 5:
+		run_import_t1mri(sbj)
+	run_morphologist(sbj)
+	if BV_VER == 4:
+		run_left_sulci_recognition(sbj)
+		run_right_sulci_recognition(sbj)
+	run_sulcal_measures(sbj)
 
 if __name__ == '__main__':
 	main()
