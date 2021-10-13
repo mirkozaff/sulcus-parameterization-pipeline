@@ -1,14 +1,26 @@
 import os
 import argparse
 
+'''
 # Main folders
-MAINDIR = './'
-BVDIR = './bv_dir_5.0.2' #<- OUTPUTS, folder will be  created
-FSDIR = './freesurfer/subjects' # INPUTS, folder containing subjects processed with freesurfer
-#BVHOME = './brainvisa-4.5.0-mandriva'
-BVHOME = './brainvisa'
-BV_VER = 5
+MAINDIR = '/usr/local/ENIGMA50/' #Scripts Folder
+BVDIR = '/usr/local/bv_dir' # Folder containing subjects processed with brainvisa
+FSDIR = '/usr/local/fs_sbj' # INPUTS, folder containing subjects processed with freesurfer
+#BVHOME = '/usr/local/brainvisa-5.0.2'
+BVHOME = '/usr/local/brainvisa-4.5'
+BV_VER = 4
 scriptDIR = os.path.join(BVDIR, 'BV_scripts')
+'''
+
+# Main folders testing
+MAINDIR = '/usr/local/ENIGMA50/' #Scripts Folder
+BVDIR = '/usr/local/bv_dir' # Folder containing subjects processed with brainvisa
+FSDIR = '/usr/local/fs_sbj' # INPUTS, folder containing subjects processed with freesurfer
+#BVHOME = '/usr/local/brainvisa-5.0.2'
+BVHOME = '/usr/local/brainvisa-4.5'
+BV_VER = 4
+scriptDIR = os.path.join(BVDIR, 'BV_scripts')
+
 
 
 def folder_creation(SUBJECT):
@@ -16,18 +28,21 @@ def folder_creation(SUBJECT):
 	if not os.path.exists(BVDIR):
 		os.makedirs(BVDIR)
 	if not os.path.exists(os.path.join(BVDIR, 'subjects', SUBJECT, 't1mri/default_acquisition/registration')):
-		os.mkdir(os.path.join(BVDIR, 'subjects', SUBJECT, 't1mri/default_acquisition/registration'))
+		os.makedirs(os.path.join(BVDIR, 'subjects', SUBJECT, 't1mri/default_acquisition/registration'))
 	if not os.path.exists(os.path.join(BVDIR, 'subjects', SUBJECT, 't1mri/default_acquisition/default_analysis')):
-		os.mkdir(os.path.join(BVDIR, 'subjects', SUBJECT, 't1mri/default_acquisition/default_analysis'))
+		os.makedirs(os.path.join(BVDIR, 'subjects', SUBJECT, 't1mri/default_acquisition/default_analysis'))
 	if not os.path.exists(os.path.join(BVDIR, 'subjects', SUBJECT, 't1mri/default_acquisition/default_analysis/segmentation')):
-		os.mkdir(os.path.join(BVDIR, 'subjects', SUBJECT, 't1mri/default_acquisition/default_analysis/segmentation'))
+		os.makedirs(os.path.join(BVDIR, 'subjects', SUBJECT, 't1mri/default_acquisition/default_analysis/segmentation'))
 	if not os.path.exists(scriptDIR):
-		os.mkdir(scriptDIR)
+		os.makedirs(scriptDIR)
 
 
 def import_freesurfer(SUBJECT):
 	#IMPORT FREESURFER
-	file_template_path = os.path.join(MAINDIR, 'brainvisa_templates/template_fs_import_4.5_ok.bvproc')
+	if BV_VER == 4:
+		file_template_path = os.path.join(MAINDIR, 'brainvisa_templates/template_fs_import_4.5_ok.bvproc')
+	else:
+		file_template_path = os.path.join(MAINDIR, 'brainvisa_templates/template_import_freesurfer_bv5.0.bvproc')
 	file_parsed_template_path = os.path.join(scriptDIR, f'{SUBJECT}_fs_import_ok.bvproc')
 	f_in = open(file_template_path, 'r')
 	f_out = open(file_parsed_template_path, 'w')

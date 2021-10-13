@@ -2,13 +2,13 @@
 <minf expander="brainvisa-history_2.0">
 <f type="bvproc">
   <f type="Uuid">
-    <s>c46cb1fb-da6e-40b1-0f31-cf4bea92853a</s>
+    <s>1107f715-5a09-9a6f-ccb9-4148a3d0ffad</s>
   </f>
   <d>
     <d name="window">
       <l length="2" name="position">
-        <n>188</n>
-        <n>24</n>
+        <n>2013</n>
+        <n>105</n>
       </l>
       <l length="2" name="size">
         <n>600</n>
@@ -20,28 +20,28 @@
       <d name="default">
         <s name="bias_corrected_output">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.nii.gz</s>
         <s name="normalization_transformation">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition_TO_Talairach-MNI.trm</s>
-        <s name="left_grey_white_output">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Lgrey_white_SUBJECT.nii.gz</s>
-        <s name="acpc_referential">BVHOME/share/brainvisa-share-4.5/registration/Talairach-AC_PC-Anatomist.referential</s>
+        <s name="mni_referential">/casa/install/share/brainvisa-share-5.0/registration/Talairach-MNI_template-SPM.referential</s>
+        <s name="acpc_referential">/casa/install/share/brainvisa-share-5.0/registration/Talairach-AC_PC-Anatomist.referential</s>
         <s name="brain_mask_output">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/brain_SUBJECT.nii.gz</s>
         <s name="commissure_coordinates">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.APC</s>
-        <s name="mni_referential">BVHOME/share/brainvisa-share-4.5/registration/Talairach-MNI_template-SPM.referential</s>
+        <n name="use_morphologist">1</n>
         <l length="1" name="transform_chain_ACPC_to_Normalized">
-          <s>BVHOME/share/brainvisa-share-4.5/transformation/talairach_TO_spm_template_novoxels.trm</s>
+          <s>/casa/install/share/brainvisa-share-5.0/transformation/talairach_TO_spm_template_novoxels.trm</s>
         </l>
         <s name="transform_to_scanner_based">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition_TO_Scanner_Based.trm</s>
+        <s name="ribbon_image">FSDIR/SUBJECT/mri/ribbon.mgz</s>
+        <s name="left_grey_white_output">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Lgrey_white_SUBJECT.nii.gz</s>
         <s name="split_brain_output">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/voronoi_SUBJECT.nii.gz</s>
         <s name="talairach_transform">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition_TO_Talairach-ACPC.trm</s>
+        <s name="Talairach_Auto">FSDIR/SUBJECT/mri/transforms/talairach.auto.xfm</s>
         <none name="scanner_based_referential"/>
         <s name="right_grey_white_output">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Rgrey_white_SUBJECT.nii.gz</s>
         <s name="histo_analysis">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.han</s>
         <s name="T1_referential">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition.referential</s>
       </d>
       <d name="selected">
-        <s name="ribbon_image">FSDIR/EJ2102/mri/ribbon.mgz</s>
-        <s name="T1_orig">FSDIR/EJ2102/mri/orig.mgz</s>
-        <s name="Talairach_Auto">FSDIR/EJ2102/mri/transforms/talairach.auto.xfm</s>
-        <s name="T1_output">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/skull_stripped_SUBJECT.nii.gz</s>
-        <n name="use_morphologist">2</n>
+        <s name="T1_orig">FSDIR/SUBJECT/mri/orig.mgz</s>
+        <s name="T1_output">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.nii.gz</s>
       </d>
     </d>
   </d>
