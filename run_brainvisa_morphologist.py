@@ -1,26 +1,26 @@
 import os
 import argparse
 
-'''
-# Main folders
-MAINDIR = '/usr/local/ENIGMA50/' #Scripts Folder
-BVDIR = '/usr/local/bv_dir' # Folder containing subjects processed with brainvisa
-FSDIR = '/usr/local/fs_sbj' # INPUTS, folder containing subjects processed with freesurfer
-#BVHOME = '/usr/local/brainvisa-5.0.2'
-BVHOME = '/usr/local/brainvisa-4.5'
-BV_VER = 4
-scriptDIR = os.path.join(BVDIR, 'BV_scripts')
-'''
+DEBUG = True
 
-# Main folders testing
-MAINDIR = '/usr/local/ENIGMA50/' #Scripts Folder
-BVDIR = '/usr/local/bv_dir' # Folder containing subjects processed with brainvisa
-FSDIR = '/usr/local/fs_sbj' # INPUTS, folder containing subjects processed with freesurfer
-#BVHOME = '/usr/local/brainvisa-5.0.2'
-BVHOME = '/usr/local/brainvisa-4.5'
-BV_VER = 4
-scriptDIR = os.path.join(BVDIR, 'BV_scripts')
-
+if DEBUG:
+	# Main folders testing
+	MAINDIR = './' #Scripts Folder
+	BVDIR = './bv_dir_5.0.2' # Folder containing subjects processed with brainvisa
+	FSDIR = '/home/zaffaro/Desktop/Docker test/docker_bv/fs_subjects' # INPUTS, folder containing subjects processed with freesurfer
+	#BVHOME = 'brainvisa-4.5.0-mandriva'
+	BVHOME = './brainvisa'
+	BV_VER = 5
+	scriptDIR = os.path.join(BVDIR, 'BV_scripts')
+else:
+	# Main folders
+	MAINDIR = '/usr/local/ENIGMA50/' #Scripts Folder
+	BVDIR = '/usr/local/bv_dir' # Folder containing subjects processed with brainvisa
+	FSDIR = '/usr/local/fs_sbj' # INPUTS, folder containing subjects processed with freesurfer
+	#BVHOME = '/usr/local/brainvisa-5.0.2'
+	BVHOME = '/usr/local/brainvisa-4.5' #os.path.join(os.environ['HOME'], 'brainvisa-5.0.2
+	BV_VER = 4
+	scriptDIR = os.path.join(BVDIR, 'BV_scripts')
 
 
 def folder_creation(SUBJECT):
@@ -59,7 +59,7 @@ def import_freesurfer(SUBJECT):
 	f_in.close()
 	f_out.close()
 
-	os.system(f'{BVHOME}/bin/brainvisa -r {file_parsed_template_path}')
+	os.system(f'{BVHOME}/bin/brainvisa -r {file_parsed_template_path} --enable-db')
 
 def run_import_t1mri(SUBJECT):
 	#IMPORT T1MRI
@@ -169,40 +169,45 @@ def run_sulcal_measures(SUBJECT):
 def main():
 	#Settings
 	parser = argparse.ArgumentParser(description='BrainVisa Cortical Surface pipeline')
-	parser.add_argument('--subject', '-s', type=str, required = True, help="subject ID")
+	parser.add_argument('--subject', '-s', type=str, help="subject ID")
+	parser.add_argument('--list', '-l', action='store_true', help="folder with subjects")
 	args = parser.parse_args()
 
-	'''
-	subjects_path = os.path.join(BVDIR, 'subjects')
-	subjects = [f for f in os.listdir(subjects_path) if (os.path.isdir(os.path.join(subjects_path, f))) and ('KK' in f)]
+	if not (args.list or args.subject):
+		parser.error('No action requested, add -list or -subject')
 
-	for sbj in subjects:
+	
+	if args.list:
+		subjects_path = os.path.join(BVDIR, 'subjects')
+		subjects = [f for f in os.listdir(subjects_path) if (os.path.isdir(os.path.join(subjects_path, f))) and ('KK' in f)]
+
+		for sbj in subjects:
+			#Brainvisa pipeline
+			print(f'*** {sbj} Morphologist pipeline started ***\n')
+			folder_creation(sbj)
+			#import_freesurfer(sbj)
+			if BV_VER == 5:
+				run_import_t1mri(sbj)
+			run_morphologist(sbj)
+			if BV_VER == 4:
+				run_left_sulci_recognition(sbj)
+				run_right_sulci_recognition(sbj)
+			run_sulcal_measures(sbj)
+	else:
+		sbj =  args.subject
+		#sbj = 'EJ2102'
+		
 		#Brainvisa pipeline
 		print(f'*** {sbj} Morphologist pipeline started ***\n')
 		folder_creation(sbj)
-		#import_freesurfer(sbj)
-		if BV_VER == 5:
-			run_import_t1mri(sbj)
-		run_morphologist(sbj)
-		if BV_VER == 4:
-			run_left_sulci_recognition(sbj)
-			run_right_sulci_recognition(sbj)
-		run_sulcal_measures(sbj)
-	'''
-
-	sbj =  args.subject
-
-	#Brainvisa pipeline
-	print(f'*** {sbj} Morphologist pipeline started ***\n')
-	folder_creation(sbj)
-	#import_freesurfer(sbj)
-	if BV_VER == 5:
-		run_import_t1mri(sbj)
-	run_morphologist(sbj)
-	if BV_VER == 4:
-		run_left_sulci_recognition(sbj)
-		run_right_sulci_recognition(sbj)
-	run_sulcal_measures(sbj)
+		import_freesurfer(sbj)
+		#if BV_VER == 5:
+		#	run_import_t1mri(sbj)
+		# run_morphologist(sbj)
+		# if BV_VER == 4:
+		# 	run_left_sulci_recognition(sbj)
+		# 	run_right_sulci_recognition(sbj)
+		# run_sulcal_measures(sbj)
 
 if __name__ == '__main__':
 	main()
