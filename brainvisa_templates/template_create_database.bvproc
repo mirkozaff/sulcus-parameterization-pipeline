@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<minf expander="brainvisa-history_2.0">
+<f type="bvproc">
+  <f type="Uuid">
+    <s>2a1c70fa-c4a2-4cbd-316c-3ca15e512618</s>
+  </f>
+  <d>
+    <d name="window">
+      <l length="2" name="position">
+        <n>1820</n>
+        <n>167</n>
+      </l>
+      <l length="2" name="size">
+        <n>600</n>
+        <n>801</n>
+      </l>
+    </d>
+    <s name="pipelineStructure">createdatabase</s>
+    <d name="parameters">
+      <d name="default">
+        <false name="read_only"/>
+        <s name="ontology">brainvisa-3.2.0</s>
+        <false name="temporary"/>
+      </d>
+      <d name="selected">
+        <s name="database_directory">DATABASE_PATH</s>
+      </d>
+    </d>
+  </d>
+</f>
+</minf>

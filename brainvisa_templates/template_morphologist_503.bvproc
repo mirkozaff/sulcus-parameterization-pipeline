@@ -1,0 +1,1002 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<minf expander="brainvisa-history_2.0">
+<f type="bvproc">
+  <f type="Uuid">
+    <s>935e7abf-7849-5d9a-764c-41c857fd450f</s>
+  </f>
+  <d>
+    <d name="window">
+      <l length="2" name="position">
+        <n>1944</n>
+        <n>125</n>
+      </l>
+      <l length="2" name="size">
+        <n>1068</n>
+        <n>801</n>
+      </l>
+    </d>
+    <s name="pipelineStructure">morphologist</s>
+    <d name="parameters">
+      <d name="default">
+        <s name="left_labelled_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto.arg</s>
+        <l length="3" name="interhemispheric_point">
+          <n>128.452531266</n>
+          <n>158.652311951</n>
+          <n>63.8694877923</n>
+        </l>
+        <s name="right_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/RSUBJECT.arg</s>
+        <true name="perform_normalization"/>
+        <s name="right_labelled_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/RSUBJECT_default_session_auto.arg</s>
+        <s name="split_brain">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/voronoi_SUBJECT.nii.gz</s>
+        <s name="t1mri_nobias">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.nii.gz</s>
+        <true name="perform_sulci_recognition"/>
+        <none name="left_hemisphere_point"/>
+        <s name="left_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/LSUBJECT.arg</s>
+        <l length="3" name="posterior_commissure">
+          <n>128.870831359</n>
+          <n>147.772643805</n>
+          <n>111.913621686</n>
+        </l>
+        <s name="histo_analysis">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.han</s>
+        <l length="3" name="anterior_commissure">
+          <n>129.607711792</n>
+          <n>123.089622498</n>
+          <n>111.311149597</n>
+        </l>
+      </d>
+      <d name="selected">
+        <s name="t1mri">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.nii.gz</s>
+      </d>
+    </d>
+    <d name="executionNodes">
+      <d name="HistoAnalysis">
+        <false name="selected"/>
+        <s name="name">Histogram analysis</s>
+        <d name="parameters">
+          <d name="default">
+            <true name="use_hfiltered"/>
+            <s name="undersampling">iteration</s>
+            <s name="histo">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.his</s>
+            <s name="white_ridges">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/whiteridge_SUBJECT.nii.gz</s>
+            <s name="hfiltered">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/hfiltered_SUBJECT.nii.gz</s>
+            <false name="fix_random_seed"/>
+            <s name="t1mri_nobias">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.nii.gz</s>
+            <true name="use_wridges"/>
+            <s name="histo_analysis">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.han</s>
+          </d>
+          <d name="selected">
+          </d>
+        </d>
+        <d name="executionNodes">
+        </d>
+      </d>
+      <d name="BiasCorrection">
+        <false name="selected"/>
+        <s name="name">T1 Bias Correction</s>
+        <d name="parameters">
+          <d name="default">
+            <s name="edge_mask">yes</s>
+            <s name="write_hfiltered">yes</s>
+            <s name="t1mri">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.nii.gz</s>
+            <n name="sampling">16.0</n>
+            <n name="zdir_multiply_regul">0.5</n>
+            <s name="modality">T1</s>
+            <n name="wridges_weight">20.0</n>
+            <s name="commissure_coordinates">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.APC</s>
+            <s name="write_wridges">yes</s>
+            <s name="field">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/biasfield_SUBJECT.nii.gz</s>
+            <false name="fix_random_seed"/>
+            <s name="delete_last_n_slices">auto (AC/PC Points needed)</s>
+            <s name="write_field">no</s>
+            <n name="field_rigidity">20.0</n>
+            <n name="ngrid">2</n>
+            <s name="write_meancurvature">no</s>
+            <n name="variance_fraction">75</n>
+            <s name="hfiltered">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/hfiltered_SUBJECT.nii.gz</s>
+            <false name="use_existing_ridges"/>
+            <s name="edges">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/edges_SUBJECT.nii.gz</s>
+            <s name="t1mri_nobias">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.nii.gz</s>
+            <s name="meancurvature">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/mean_curvature_SUBJECT.nii.gz</s>
+            <s name="write_edges">yes</s>
+            <s name="white_ridges">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/whiteridge_SUBJECT.nii.gz</s>
+            <s name="mode">write_minimal</s>
+            <s name="variance">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/variance_SUBJECT.nii.gz</s>
+            <s name="write_variance">yes</s>
+          </d>
+          <d name="selected">
+          </d>
+        </d>
+        <d name="executionNodes">
+        </d>
+      </d>
+      <d name="BrainSegmentation">
+        <false name="selected"/>
+        <s name="name">Compute Brain Mask</s>
+        <d name="parameters">
+          <d name="default">
+            <s name="lesion_mask_mode">e</s>
+            <n name="layer">0</n>
+            <s name="visu">No</s>
+            <s name="brain_mask">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/brain_SUBJECT.nii.gz</s>
+            <s name="white_ridges">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/whiteridge_SUBJECT.nii.gz</s>
+            <s name="variant">2010</s>
+            <n name="first_slice">0</n>
+            <s name="commissure_coordinates">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.APC</s>
+            <s name="edges">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/edges_SUBJECT.nii.gz</s>
+            <false name="fix_random_seed"/>
+            <none name="lesion_mask"/>
+            <s name="t1mri_nobias">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.nii.gz</s>
+            <s name="variance">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/variance_SUBJECT.nii.gz</s>
+            <n name="last_slice">0</n>
+            <n name="erosion_size">1.8</n>
+            <s name="histo_analysis">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.han</s>
+          </d>
+          <d name="selected">
+          </d>
+        </d>
+        <d name="executionNodes">
+        </d>
+      </d>
+      <d name="SplitBrain">
+        <false name="selected"/>
+        <s name="name">Split Brain Mask</s>
+        <d name="parameters">
+          <d name="default">
+            <s name="t1mri_nobias">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.nii.gz</s>
+            <n name="initial_erosion">2.0</n>
+            <s name="white_ridges">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/whiteridge_SUBJECT.nii.gz</s>
+            <n name="cc_min_size">500</n>
+            <s name="variant">GW Barycentre</s>
+            <s name="commissure_coordinates">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.APC</s>
+            <n name="mult_factor">2</n>
+            <true name="use_ridges"/>
+            <s name="split_brain">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/voronoi_SUBJECT.nii.gz</s>
+            <false name="fix_random_seed"/>
+            <n name="bary_factor">0.6</n>
+            <true name="use_template"/>
+            <s name="split_template">/casa/install/share/brainvisa-share-5.0/hemitemplate/closedvoronoi.ima</s>
+            <s name="brain_mask">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/brain_SUBJECT.nii.gz</s>
+            <s name="histo_analysis">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.han</s>
+            <s name="mode">Watershed (2011)</s>
+          </d>
+          <d name="selected">
+          </d>
+        </d>
+        <d name="executionNodes">
+        </d>
+      </d>
+      <d name="Renorm">
+        <false name="selected"/>
+        <s name="name">Skull-stripped brain normalization</s>
+        <d name="parameters">
+          <d name="default">
+            <s name="t1mri">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.nii.gz</s>
+            <s name="brain_mask">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/brain_SUBJECT.nii.gz</s>
+            <s name="commissure_coordinates">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.APC</s>
+            <s name="talairach_transformation">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition_TO_Talairach-ACPC.trm</s>
+            <s name="template">/casa/install/share/brainvisa-share-5.0/anatomical_templates/MNI152_T1_2mm_brain.nii</s>
+            <s name="skull_stripped">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/skull_stripped_SUBJECT.nii.gz</s>
+            <s name="transformation">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition_TO_Talairach-MNI.trm</s>
+          </d>
+          <d name="selected">
+          </d>
+        </d>
+        <d name="executionNodes">
+          <d name="TalairachFromNormalization">
+            <true name="selected"/>
+            <s name="name">Talairach Transformation From Normalization</s>
+            <d name="parameters">
+              <d name="default">
+                <s name="normalized_referential">/casa/install/share/brainvisa-share-5.0/registration/Talairach-MNI_template-SPM.referential</s>
+                <s name="normalization_transformation">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition_TO_Talairach-MNI.trm</s>
+                <s name="t1mri">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.nii.gz</s>
+                <s name="acpc_referential">/casa/install/share/brainvisa-share-5.0/registration/Talairach-AC_PC-Anatomist.referential</s>
+                <s name="commissure_coordinates">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.APC</s>
+                <l length="1" name="transform_chain_ACPC_to_Normalized">
+                  <s>/casa/install/share/brainvisa-share-5.0/transformation/talairach_TO_spm_template_novoxels.trm</s>
+                </l>
+                <s name="Talairach_transform">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition_TO_Talairach-ACPC.trm</s>
+                <s name="source_referential">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition.referential</s>
+              </d>
+              <d name="selected">
+              </d>
+            </d>
+            <d name="executionNodes">
+            </d>
+          </d>
+          <d name="SkullStripping">
+            <n name="selected">1</n>
+            <s name="name">Skull-stripping</s>
+            <d name="parameters">
+              <d name="default">
+                <s name="t1mri">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.nii.gz</s>
+                <s name="skull_stripped">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/skull_stripped_SUBJECT.nii.gz</s>
+                <s name="brain_mask">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/brain_SUBJECT.nii.gz</s>
+              </d>
+              <d name="selected">
+              </d>
+            </d>
+            <d name="executionNodes">
+            </d>
+          </d>
+          <d name="Normalization">
+            <n name="selected">1</n>
+            <s name="name">Normalization pipeline</s>
+            <d name="parameters">
+              <d name="default">
+                <n name="init_translation_origin">0</n>
+                <s name="t1mri">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/skull_stripped_SUBJECT.nii.gz</s>
+                <s name="reoriented_t1mri">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/skull_stripped_SUBJECT.nii.gz</s>
+                <none name="commissures_coordinates"/>
+                <none name="output_commissures_coordinates"/>
+                <s name="transformation">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition_TO_Talairach-MNI.trm</s>
+              </d>
+              <d name="selected">
+                <false name="allow_flip_initial_MRI"/>
+              </d>
+            </d>
+            <d name="executionNodes">
+              <d name="Normalization_AimsMIRegister">
+                <true name="selected"/>
+                <s name="name">Anatomy Normalization (using AimsMIRegister)</s>
+                <d name="parameters">
+                  <d name="default">
+                    <s name="normalized_anatomy_data">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/normalized_AimsMIRegister_SUBJECT.nii.gz</s>
+                    <s name="mni_to_acpc">/casa/install/share/brainvisa-share-5.0/transformation/talairach_TO_spm_template_novoxels.trm</s>
+                    <s name="transformation_to_ACPC">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition_TO_Talairach-ACPC.trm</s>
+                    <n name="smoothing">1.0</n>
+                    <s name="anatomy_data">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/skull_stripped_SUBJECT.nii.gz</s>
+                    <s name="transformation_to_MNI">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition_TO_Talairach-MNI.trm</s>
+                    <none name="transformation_to_template"/>
+                    <s name="anatomical_template">/casa/install/share/brainvisa-share-5.0/anatomical_templates/MNI152_T1_2mm_brain.nii</s>
+                  </d>
+                  <d name="selected">
+                  </d>
+                </d>
+                <d name="executionNodes">
+                </d>
+              </d>
+            </d>
+          </d>
+        </d>
+      </d>
+      <d name="HeadMesh">
+        <false name="selected"/>
+        <s name="name">Head Mesh</s>
+        <d name="parameters">
+          <d name="default">
+            <false name="keep_head_mask"/>
+            <none name="first_slice"/>
+            <s name="threshold_mode">auto</s>
+            <s name="head_mesh">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/mesh/SUBJECT_head.gii</s>
+            <s name="head_mask">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/head_SUBJECT.nii.gz</s>
+            <none name="threshold"/>
+            <s name="t1mri_nobias">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.nii.gz</s>
+            <none name="remove_mask"/>
+            <none name="closing"/>
+            <s name="histo_analysis">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.han</s>
+          </d>
+          <d name="selected">
+          </d>
+        </d>
+        <d name="executionNodes">
+        </d>
+      </d>
+      <d name="HemispheresProcessing">
+        <true name="selected"/>
+        <s name="name">Hemispheres Processing</s>
+        <d name="executionNodes">
+          <d name="RightHemisphere">
+            <true name="selected"/>
+            <s name="name">Right hemisphere</s>
+            <d name="executionNodes">
+              <d name="GreyWhiteTopology">
+                <true name="selected"/>
+                <s name="name">Grey White Topology Correction</s>
+                <d name="parameters">
+                  <d name="default">
+                    <s name="hemi_cortex">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Rcortex_SUBJECT.nii.gz</s>
+                    <s name="version">2</s>
+                    <false name="fix_random_seed"/>
+                    <s name="t1mri_nobias">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.nii.gz</s>
+                    <s name="grey_white">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Rgrey_white_SUBJECT.nii.gz</s>
+                    <s name="histo_analysis">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.han</s>
+                  </d>
+                  <d name="selected">
+                  </d>
+                </d>
+                <d name="executionNodes">
+                </d>
+              </d>
+              <d name="CorticalFoldsGraph">
+                <true name="selected"/>
+                <s name="name">Cortical Folds Graph</s>
+                <d name="parameters">
+                  <d name="default">
+                    <true name="compute_fold_meshes"/>
+                    <s name="split_brain">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/voronoi_SUBJECT.nii.gz</s>
+                    <s name="graph_version">3.1</s>
+                    <s name="skeleton">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Rskeleton_SUBJECT.nii.gz</s>
+                    <s name="sulci_voronoi">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/Rsulcivoronoi_SUBJECT.nii.gz</s>
+                    <s name="graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/RSUBJECT.arg</s>
+                    <false name="write_cortex_mid_interface"/>
+                    <true name="allow_multithreading"/>
+                    <s name="commissure_coordinates">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.APC</s>
+                    <s name="hemi_cortex">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Rcortex_SUBJECT.nii.gz</s>
+                    <s name="pial_mesh">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/mesh/SUBJECT_Rhemi.gii</s>
+                    <s name="grey_white">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Rgrey_white_SUBJECT.nii.gz</s>
+                    <s name="talairach_transform">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition_TO_Talairach-ACPC.trm</s>
+                    <s name="white_mesh">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/mesh/SUBJECT_Rwhite.gii</s>
+                    <s name="roots">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Rroots_SUBJECT.nii.gz</s>
+                    <s name="cortex_mid_interface">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Rgw_interface_SUBJECT.nii.gz</s>
+                  </d>
+                  <d name="selected">
+                  </d>
+                </d>
+                <d name="executionNodes">
+                </d>
+              </d>
+              <d name="SulciSkeleton">
+                <true name="selected"/>
+                <s name="name">Sulci Skeleton and Roots</s>
+                <d name="parameters">
+                  <d name="default">
+                    <s name="skeleton">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Rskeleton_SUBJECT.nii.gz</s>
+                    <s name="hemi_cortex">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Rcortex_SUBJECT.nii.gz</s>
+                    <s name="version">2</s>
+                    <false name="fix_random_seed"/>
+                    <s name="t1mri_nobias">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.nii.gz</s>
+                    <s name="grey_white">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Rgrey_white_SUBJECT.nii.gz</s>
+                    <s name="roots">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Rroots_SUBJECT.nii.gz</s>
+                  </d>
+                  <d name="selected">
+                  </d>
+                </d>
+                <d name="executionNodes">
+                </d>
+              </d>
+              <d name="GreyWhiteClassification">
+                <false name="selected"/>
+                <s name="name">Grey White Classification</s>
+                <d name="parameters">
+                  <d name="default">
+                    <s name="lesion_mask_mode">e</s>
+                    <s name="commissure_coordinates">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.APC</s>
+                    <s name="split_brain">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/voronoi_SUBJECT.nii.gz</s>
+                    <s name="edges">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/edges_SUBJECT.nii.gz</s>
+                    <false name="fix_random_seed"/>
+                    <none name="lesion_mask"/>
+                    <s name="t1mri_nobias">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.nii.gz</s>
+                    <s name="grey_white">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Rgrey_white_SUBJECT.nii.gz</s>
+                    <s name="histo_analysis">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.han</s>
+                  </d>
+                  <d name="selected">
+                    <s name="side">right</s>
+                  </d>
+                </d>
+                <d name="executionNodes">
+                </d>
+              </d>
+              <d name="PialMesh">
+                <true name="selected"/>
+                <s name="name">Pial Mesh</s>
+                <d name="parameters">
+                  <d name="default">
+                    <s name="skeleton">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Rskeleton_SUBJECT.nii.gz</s>
+                    <s name="pial_mesh">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/mesh/SUBJECT_Rhemi.gii</s>
+                    <s name="hemi_cortex">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Rcortex_SUBJECT.nii.gz</s>
+                    <s name="version">2</s>
+                    <false name="fix_random_seed"/>
+                    <s name="t1mri_nobias">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.nii.gz</s>
+                    <s name="grey_white">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Rgrey_white_SUBJECT.nii.gz</s>
+                  </d>
+                  <d name="selected">
+                  </d>
+                </d>
+                <d name="executionNodes">
+                </d>
+              </d>
+              <d name="GreyWhiteMesh">
+                <true name="selected"/>
+                <s name="name">Grey White Mesh</s>
+                <d name="parameters">
+                  <d name="default">
+                    <s name="hemi_cortex">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Rcortex_SUBJECT.nii.gz</s>
+                    <s name="white_mesh">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/mesh/SUBJECT_Rwhite.gii</s>
+                  </d>
+                  <d name="selected">
+                  </d>
+                </d>
+                <d name="executionNodes">
+                </d>
+              </d>
+              <d name="SulciRecognition">
+                <true name="selected"/>
+                <s name="name">Sulci Recognition</s>
+                <d name="parameters">
+                  <d name="default">
+                    <false name="fix_random_seed"/>
+                    <s name="output_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/RSUBJECT_default_session_auto.arg</s>
+                    <s name="data_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/RSUBJECT.arg</s>
+                  </d>
+                  <d name="selected">
+                  </d>
+                </d>
+                <d name="executionNodes">
+                  <d name="recognition2000">
+                    <n name="selected">0</n>
+                    <s name="name">Sulci Recognition with ANN</s>
+                    <d name="parameters">
+                      <d name="default">
+                        <n name="stopRate">0.05</n>
+                        <false name="forbid_unknown_label"/>
+                        <n name="model_hint">0</n>
+                        <n name="niterBelowStopProp">1</n>
+                        <n name="rate">0.98</n>
+                        <false name="fix_random_seed"/>
+                        <s name="output_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/RSUBJECT_default_session_auto.arg</s>
+                        <s name="energy_plot_file">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/RSUBJECT_default_session_auto.nrj</s>
+                        <s name="model">/casa/install/share/brainvisa-share-5.0/models/models_2008/discriminative_models/3.0/Rfolds_noroots/Rfolds_noroots.arg</s>
+                        <s name="data_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/RSUBJECT.arg</s>
+                      </d>
+                      <d name="selected">
+                      </d>
+                    </d>
+                    <d name="executionNodes">
+                    </d>
+                  </d>
+                  <d name="SPAM_recognition09">
+                    <false name="selected"/>
+                    <s name="name">Sulci Recognition with SPAM</s>
+                    <d name="parameters">
+                      <d name="default">
+                        <false name="fix_random_seed"/>
+                        <s name="output_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/RSUBJECT_default_session_auto.arg</s>
+                        <s name="data_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/RSUBJECT.arg</s>
+                      </d>
+                      <d name="selected">
+                      </d>
+                    </d>
+                    <d name="executionNodes">
+                      <d name="local_or_markovian">
+                        <n name="selected">1</n>
+                        <s name="name">Local or Markovian</s>
+                        <d name="executionNodes">
+                          <d name="local_recognition">
+                            <n name="selected">1</n>
+                            <s name="name">SPAM recognition, local registration</s>
+                            <d name="parameters">
+                              <d name="default">
+                                <s name="labels_translation_map">/casa/install/share/brainvisa-share-5.0/nomenclature/translation/sulci_model_2008.trl</s>
+                                <s name="translation_priors">/casa/install/share/brainvisa-share-5.0/models/models_2008/descriptive_models/segments/locally_from_global_registred_spam_right/gaussian_translation_trm_priors.dat</s>
+                                <none name="initial_transformation"/>
+                                <s name="local_referentials">/casa/install/share/brainvisa-share-5.0/models/models_2008/descriptive_models/segments/locally_from_global_registred_spam_right/local_referentials.dat</s>
+                                <s name="output_local_transformations">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/RSUBJECT_default_session_auto_global_TO_local</s>
+                                <s name="labels_priors">/casa/install/share/brainvisa-share-5.0/models/models_2008/descriptive_models/labels_priors/frequency_segments_priors_right/frequency_segments_priors.dat</s>
+                                <s name="angle_priors">/casa/install/share/brainvisa-share-5.0/models/models_2008/descriptive_models/segments/locally_from_global_registred_spam_right/vonmises_angle_trm_priors.dat</s>
+                                <s name="output_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/RSUBJECT_default_session_auto.arg</s>
+                                <s name="data_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/RSUBJECT_default_session_auto.arg</s>
+                                <s name="model">/casa/install/share/brainvisa-share-5.0/models/models_2008/descriptive_models/segments/locally_from_global_registred_spam_right/spam_distribs.dat</s>
+                                <s name="posterior_probabilities">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/RSUBJECT_default_session_auto_proba.csv</s>
+                                <s name="direction_priors">/casa/install/share/brainvisa-share-5.0/models/models_2008/descriptive_models/segments/locally_from_global_registred_spam_right/bingham_direction_trm_priors.dat</s>
+                                <s name="global_transformation">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/RSUBJECT_default_session_auto_Tal_TO_SPAM.trm</s>
+                              </d>
+                              <d name="selected">
+                              </d>
+                            </d>
+                            <d name="executionNodes">
+                            </d>
+                          </d>
+                          <d name="markovian_recognition">
+                            <n name="selected">0</n>
+                            <s name="name">SPAM recognition, Markovian model</s>
+                            <d name="parameters">
+                              <d name="default">
+                                <s name="labels_translation_map">/casa/install/share/brainvisa-share-5.0/nomenclature/translation/sulci_model_2008.trl</s>
+                                <none name="initial_transformation"/>
+                                <s name="labels_priors">/casa/install/share/brainvisa-share-5.0/models/models_2008/descriptive_models/labels_priors/frequency_segments_priors_right/frequency_segments_priors.dat</s>
+                                <s name="segments_relations_model">/casa/install/share/brainvisa-share-5.0/models/models_2008/descriptive_models/segments_relations/mindist_relations_right/gamma_exponential_mixture_distribs.dat</s>
+                                <false name="fix_random_seed"/>
+                                <s name="output_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/RSUBJECT_default_session_auto.arg</s>
+                                <s name="data_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/RSUBJECT_default_session_auto.arg</s>
+                                <s name="model">/casa/install/share/brainvisa-share-5.0/models/models_2008/descriptive_models/segments/global_registered_spam_right/spam_distribs.dat</s>
+                                <s name="posterior_probabilities">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/RSUBJECT_default_session_auto_proba.csv</s>
+                                <s name="global_transformation">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/RSUBJECT_default_session_auto_Tal_TO_SPAM.trm</s>
+                              </d>
+                              <d name="selected">
+                              </d>
+                            </d>
+                            <d name="executionNodes">
+                            </d>
+                          </d>
+                        </d>
+                      </d>
+                      <d name="global_recognition">
+                        <n name="selected">1</n>
+                        <s name="name">SPAM recognition, global registration</s>
+                        <d name="parameters">
+                          <d name="default">
+                            <s name="labels_translation_map">/casa/install/share/brainvisa-share-5.0/nomenclature/translation/sulci_model_2008.trl</s>
+                            <none name="initial_transformation"/>
+                            <s name="output_t1_to_global_transformation">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/RSUBJECT_default_session_auto_T1_TO_SPAM.trm</s>
+                            <s name="labels_priors">/casa/install/share/brainvisa-share-5.0/models/models_2008/descriptive_models/labels_priors/frequency_segments_priors_right/frequency_segments_priors.dat</s>
+                            <s name="output_transformation">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/RSUBJECT_default_session_auto_Tal_TO_SPAM.trm</s>
+                            <s name="output_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/RSUBJECT_default_session_auto.arg</s>
+                            <s name="data_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/RSUBJECT.arg</s>
+                            <s name="model_type">Global registration</s>
+                            <s name="model">/casa/install/share/brainvisa-share-5.0/models/models_2008/descriptive_models/segments/global_registered_spam_right/spam_distribs.dat</s>
+                            <s name="posterior_probabilities">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/RSUBJECT_default_session_auto_proba.csv</s>
+                          </d>
+                          <d name="selected">
+                          </d>
+                        </d>
+                        <d name="executionNodes">
+                        </d>
+                      </d>
+                    </d>
+                  </d>
+                  <d name="CNN_recognition19">
+                    <true name="selected"/>
+                    <s name="name">Sulci recognition with Deep CNN</s>
+                    <d name="parameters">
+                      <d name="default">
+                        <s name="labeled_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/RSUBJECT_default_session_auto.arg</s>
+                        <false name="capsul_gui"/>
+                        <s name="skeleton">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Rskeleton_SUBJECT.nii.gz</s>
+                        <true name="rebuild_attributes"/>
+                        <s name="model_file">/casa/install/share/brainvisa-share-5.0/models/models_2019/cnn_models/sulci_unet_model_right.mdsm</s>
+                        <true name="allow_multithreading"/>
+                        <true name="use_capsul_completion"/>
+                        <false name="edit_study_config"/>
+                        <false name="fix_random_seed"/>
+                        <s name="param_file">/casa/install/share/brainvisa-share-5.0/models/models_2019/cnn_models/sulci_unet_model_params_right.json</s>
+                        <s name="graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/RSUBJECT.arg</s>
+                        <false name="edit_pipeline"/>
+                        <s name="roots">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Rroots_SUBJECT.nii.gz</s>
+                        <n name="cuda">-1</n>
+                      </d>
+                      <d name="selected">
+                      </d>
+                    </d>
+                    <d name="executionNodes">
+                    </d>
+                  </d>
+                </d>
+              </d>
+            </d>
+          </d>
+          <d name="LeftHemisphere">
+            <true name="selected"/>
+            <s name="name">Left hemisphere</s>
+            <d name="executionNodes">
+              <d name="GreyWhiteTopology">
+                <true name="selected"/>
+                <s name="name">Grey White Topology Correction</s>
+                <d name="parameters">
+                  <d name="default">
+                    <s name="hemi_cortex">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Lcortex_SUBJECT.nii.gz</s>
+                    <s name="version">2</s>
+                    <false name="fix_random_seed"/>
+                    <s name="t1mri_nobias">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.nii.gz</s>
+                    <s name="grey_white">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Lgrey_white_SUBJECT.nii.gz</s>
+                    <s name="histo_analysis">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.han</s>
+                  </d>
+                  <d name="selected">
+                  </d>
+                </d>
+                <d name="executionNodes">
+                </d>
+              </d>
+              <d name="CorticalFoldsGraph">
+                <true name="selected"/>
+                <s name="name">Cortical Folds Graph</s>
+                <d name="parameters">
+                  <d name="default">
+                    <true name="compute_fold_meshes"/>
+                    <s name="split_brain">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/voronoi_SUBJECT.nii.gz</s>
+                    <s name="graph_version">3.1</s>
+                    <s name="skeleton">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Lskeleton_SUBJECT.nii.gz</s>
+                    <s name="sulci_voronoi">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/Lsulcivoronoi_SUBJECT.nii.gz</s>
+                    <s name="graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/LSUBJECT.arg</s>
+                    <false name="write_cortex_mid_interface"/>
+                    <true name="allow_multithreading"/>
+                    <s name="commissure_coordinates">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.APC</s>
+                    <s name="hemi_cortex">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Lcortex_SUBJECT.nii.gz</s>
+                    <s name="pial_mesh">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/mesh/SUBJECT_Lhemi.gii</s>
+                    <s name="grey_white">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Lgrey_white_SUBJECT.nii.gz</s>
+                    <s name="talairach_transform">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition_TO_Talairach-ACPC.trm</s>
+                    <s name="white_mesh">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/mesh/SUBJECT_Lwhite.gii</s>
+                    <s name="roots">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Lroots_SUBJECT.nii.gz</s>
+                    <s name="cortex_mid_interface">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Lgw_interface_SUBJECT.nii.gz</s>
+                  </d>
+                  <d name="selected">
+                  </d>
+                </d>
+                <d name="executionNodes">
+                </d>
+              </d>
+              <d name="SulciSkeleton">
+                <true name="selected"/>
+                <s name="name">Sulci Skeleton and Roots</s>
+                <d name="parameters">
+                  <d name="default">
+                    <s name="skeleton">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Lskeleton_SUBJECT.nii.gz</s>
+                    <s name="hemi_cortex">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Lcortex_SUBJECT.nii.gz</s>
+                    <s name="version">2</s>
+                    <false name="fix_random_seed"/>
+                    <s name="t1mri_nobias">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.nii.gz</s>
+                    <s name="grey_white">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Lgrey_white_SUBJECT.nii.gz</s>
+                    <s name="roots">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Lroots_SUBJECT.nii.gz</s>
+                  </d>
+                  <d name="selected">
+                  </d>
+                </d>
+                <d name="executionNodes">
+                </d>
+              </d>
+              <d name="GreyWhiteClassification">
+                <false name="selected"/>
+                <s name="name">Grey White Classification</s>
+                <d name="parameters">
+                  <d name="default">
+                    <s name="lesion_mask_mode">e</s>
+                    <s name="commissure_coordinates">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.APC</s>
+                    <s name="split_brain">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/voronoi_SUBJECT.nii.gz</s>
+                    <s name="edges">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/edges_SUBJECT.nii.gz</s>
+                    <false name="fix_random_seed"/>
+                    <none name="lesion_mask"/>
+                    <s name="t1mri_nobias">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.nii.gz</s>
+                    <s name="grey_white">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Lgrey_white_SUBJECT.nii.gz</s>
+                    <s name="histo_analysis">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.han</s>
+                  </d>
+                  <d name="selected">
+                    <s name="side">left</s>
+                  </d>
+                </d>
+                <d name="executionNodes">
+                </d>
+              </d>
+              <d name="PialMesh">
+                <true name="selected"/>
+                <s name="name">Pial Mesh</s>
+                <d name="parameters">
+                  <d name="default">
+                    <s name="skeleton">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Lskeleton_SUBJECT.nii.gz</s>
+                    <s name="pial_mesh">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/mesh/SUBJECT_Lhemi.gii</s>
+                    <s name="hemi_cortex">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Lcortex_SUBJECT.nii.gz</s>
+                    <s name="version">2</s>
+                    <false name="fix_random_seed"/>
+                    <s name="t1mri_nobias">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/nobias_SUBJECT.nii.gz</s>
+                    <s name="grey_white">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Lgrey_white_SUBJECT.nii.gz</s>
+                  </d>
+                  <d name="selected">
+                  </d>
+                </d>
+                <d name="executionNodes">
+                </d>
+              </d>
+              <d name="GreyWhiteMesh">
+                <true name="selected"/>
+                <s name="name">Grey White Mesh</s>
+                <d name="parameters">
+                  <d name="default">
+                    <s name="hemi_cortex">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Lcortex_SUBJECT.nii.gz</s>
+                    <s name="white_mesh">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/mesh/SUBJECT_Lwhite.gii</s>
+                  </d>
+                  <d name="selected">
+                  </d>
+                </d>
+                <d name="executionNodes">
+                </d>
+              </d>
+              <d name="SulciRecognition">
+                <true name="selected"/>
+                <s name="name">Sulci Recognition</s>
+                <d name="parameters">
+                  <d name="default">
+                    <false name="fix_random_seed"/>
+                    <s name="output_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto.arg</s>
+                    <s name="data_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/LSUBJECT.arg</s>
+                  </d>
+                  <d name="selected">
+                  </d>
+                </d>
+                <d name="executionNodes">
+                  <d name="recognition2000">
+                    <n name="selected">0</n>
+                    <s name="name">Sulci Recognition with ANN</s>
+                    <d name="parameters">
+                      <d name="default">
+                        <n name="stopRate">0.05</n>
+                        <false name="forbid_unknown_label"/>
+                        <n name="model_hint">0</n>
+                        <n name="niterBelowStopProp">1</n>
+                        <n name="rate">0.98</n>
+                        <false name="fix_random_seed"/>
+                        <s name="output_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto.arg</s>
+                        <s name="energy_plot_file">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto.nrj</s>
+                        <s name="model">/casa/install/share/brainvisa-share-5.0/models/models_2008/discriminative_models/3.0/Lfolds_noroots/Lfolds_noroots.arg</s>
+                        <s name="data_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/LSUBJECT.arg</s>
+                      </d>
+                      <d name="selected">
+                      </d>
+                    </d>
+                    <d name="executionNodes">
+                    </d>
+                  </d>
+                  <d name="SPAM_recognition09">
+                    <false name="selected"/>
+                    <s name="name">Sulci Recognition with SPAM</s>
+                    <d name="parameters">
+                      <d name="default">
+                        <false name="fix_random_seed"/>
+                        <s name="output_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto.arg</s>
+                        <s name="data_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/LSUBJECT.arg</s>
+                      </d>
+                      <d name="selected">
+                      </d>
+                    </d>
+                    <d name="executionNodes">
+                      <d name="local_or_markovian">
+                        <n name="selected">1</n>
+                        <s name="name">Local or Markovian</s>
+                        <d name="executionNodes">
+                          <d name="local_recognition">
+                            <n name="selected">1</n>
+                            <s name="name">SPAM recognition, local registration</s>
+                            <d name="parameters">
+                              <d name="default">
+                                <s name="labels_translation_map">/casa/install/share/brainvisa-share-5.0/nomenclature/translation/sulci_model_2008.trl</s>
+                                <s name="translation_priors">/casa/install/share/brainvisa-share-5.0/models/models_2008/descriptive_models/segments/locally_from_global_registred_spam_left/gaussian_translation_trm_priors.dat</s>
+                                <none name="initial_transformation"/>
+                                <s name="local_referentials">/casa/install/share/brainvisa-share-5.0/models/models_2008/descriptive_models/segments/locally_from_global_registred_spam_left/local_referentials.dat</s>
+                                <s name="output_local_transformations">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto_global_TO_local</s>
+                                <s name="labels_priors">/casa/install/share/brainvisa-share-5.0/models/models_2008/descriptive_models/labels_priors/frequency_segments_priors_left/frequency_segments_priors.dat</s>
+                                <s name="angle_priors">/casa/install/share/brainvisa-share-5.0/models/models_2008/descriptive_models/segments/locally_from_global_registred_spam_left/vonmises_angle_trm_priors.dat</s>
+                                <s name="output_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto.arg</s>
+                                <s name="data_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto.arg</s>
+                                <s name="model">/casa/install/share/brainvisa-share-5.0/models/models_2008/descriptive_models/segments/locally_from_global_registred_spam_left/spam_distribs.dat</s>
+                                <s name="posterior_probabilities">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto_proba.csv</s>
+                                <s name="direction_priors">/casa/install/share/brainvisa-share-5.0/models/models_2008/descriptive_models/segments/locally_from_global_registred_spam_left/bingham_direction_trm_priors.dat</s>
+                                <s name="global_transformation">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto_Tal_TO_SPAM.trm</s>
+                              </d>
+                              <d name="selected">
+                              </d>
+                            </d>
+                            <d name="executionNodes">
+                            </d>
+                          </d>
+                          <d name="markovian_recognition">
+                            <n name="selected">0</n>
+                            <s name="name">SPAM recognition, Markovian model</s>
+                            <d name="parameters">
+                              <d name="default">
+                                <s name="labels_translation_map">/casa/install/share/brainvisa-share-5.0/nomenclature/translation/sulci_model_2008.trl</s>
+                                <none name="initial_transformation"/>
+                                <s name="labels_priors">/casa/install/share/brainvisa-share-5.0/models/models_2008/descriptive_models/labels_priors/frequency_segments_priors_left/frequency_segments_priors.dat</s>
+                                <s name="segments_relations_model">/casa/install/share/brainvisa-share-5.0/models/models_2008/descriptive_models/segments_relations/mindist_relations_left/gamma_exponential_mixture_distribs.dat</s>
+                                <false name="fix_random_seed"/>
+                                <s name="output_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto.arg</s>
+                                <s name="data_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto.arg</s>
+                                <s name="model">/casa/install/share/brainvisa-share-5.0/models/models_2008/descriptive_models/segments/global_registered_spam_left/spam_distribs.dat</s>
+                                <s name="posterior_probabilities">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto_proba.csv</s>
+                                <s name="global_transformation">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto_Tal_TO_SPAM.trm</s>
+                              </d>
+                              <d name="selected">
+                              </d>
+                            </d>
+                            <d name="executionNodes">
+                            </d>
+                          </d>
+                        </d>
+                      </d>
+                      <d name="global_recognition">
+                        <n name="selected">1</n>
+                        <s name="name">SPAM recognition, global registration</s>
+                        <d name="parameters">
+                          <d name="default">
+                            <s name="labels_translation_map">/casa/install/share/brainvisa-share-5.0/nomenclature/translation/sulci_model_2008.trl</s>
+                            <none name="initial_transformation"/>
+                            <s name="output_t1_to_global_transformation">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto_T1_TO_SPAM.trm</s>
+                            <s name="labels_priors">/casa/install/share/brainvisa-share-5.0/models/models_2008/descriptive_models/labels_priors/frequency_segments_priors_left/frequency_segments_priors.dat</s>
+                            <s name="output_transformation">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto_Tal_TO_SPAM.trm</s>
+                            <s name="output_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto.arg</s>
+                            <s name="data_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/LSUBJECT.arg</s>
+                            <s name="model_type">Global registration</s>
+                            <s name="model">/casa/install/share/brainvisa-share-5.0/models/models_2008/descriptive_models/segments/global_registered_spam_left/spam_distribs.dat</s>
+                            <s name="posterior_probabilities">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto_proba.csv</s>
+                          </d>
+                          <d name="selected">
+                          </d>
+                        </d>
+                        <d name="executionNodes">
+                        </d>
+                      </d>
+                    </d>
+                  </d>
+                  <d name="CNN_recognition19">
+                    <true name="selected"/>
+                    <s name="name">Sulci recognition with Deep CNN</s>
+                    <d name="parameters">
+                      <d name="default">
+                        <s name="labeled_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto.arg</s>
+                        <false name="capsul_gui"/>
+                        <s name="skeleton">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Lskeleton_SUBJECT.nii.gz</s>
+                        <true name="rebuild_attributes"/>
+                        <s name="model_file">/casa/install/share/brainvisa-share-5.0/models/models_2019/cnn_models/sulci_unet_model_left.mdsm</s>
+                        <true name="allow_multithreading"/>
+                        <true name="use_capsul_completion"/>
+                        <false name="edit_study_config"/>
+                        <false name="fix_random_seed"/>
+                        <s name="param_file">/casa/install/share/brainvisa-share-5.0/models/models_2019/cnn_models/sulci_unet_model_params_left.json</s>
+                        <s name="graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/LSUBJECT.arg</s>
+                        <false name="edit_pipeline"/>
+                        <s name="roots">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/Lroots_SUBJECT.nii.gz</s>
+                        <n name="cuda">-1</n>
+                      </d>
+                      <d name="selected">
+                      </d>
+                    </d>
+                    <d name="executionNodes">
+                    </d>
+                  </d>
+                </d>
+              </d>
+            </d>
+          </d>
+        </d>
+      </d>
+      <d name="PrepareSubject">
+        <false name="selected"/>
+        <s name="name">Image orientation handling</s>
+        <d name="parameters">
+          <d name="default">
+            <s name="reoriented_t1mri">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.nii.gz</s>
+            <s name="commissure_coordinates">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.APC</s>
+            <false name="allow_flip_initial_MRI"/>
+          </d>
+          <d name="selected">
+            <s name="T1mri">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.nii.gz</s>
+          </d>
+        </d>
+        <d name="executionNodes">
+          <d name="StandardACPC">
+            <n name="selected">0</n>
+            <s name="name">Prepare Subject for Anatomical Pipeline</s>
+            <d name="parameters">
+              <d name="default">
+                <true name="remove_older_MNI_normalization"/>
+                <l length="3" name="Interhemispheric_Point">
+                  <n>128.452531266</n>
+                  <n>158.652311951</n>
+                  <n>63.8694877923</n>
+                </l>
+                <s name="Normalised">No</s>
+                <s name="older_MNI_normalization">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition_TO_Talairach-MNI.trm</s>
+                <s name="commissure_coordinates">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.APC</s>
+                <s name="reoriented_t1mri">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.nii.gz</s>
+                <none name="Left_Hemisphere_Point"/>
+                <false name="allow_flip_initial_MRI"/>
+                <l length="3" name="Posterior_Commissure">
+                  <n>128.870831359</n>
+                  <n>147.772643805</n>
+                  <n>111.913621686</n>
+                </l>
+                <l length="3" name="Anterior_Commissure">
+                  <n>129.607711792</n>
+                  <n>123.089622498</n>
+                  <n>111.311149597</n>
+                </l>
+              </d>
+              <d name="selected">
+                <s name="T1mri">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.nii.gz</s>
+              </d>
+            </d>
+            <d name="executionNodes">
+            </d>
+          </d>
+          <d name="Normalization">
+            <n name="selected">1</n>
+            <s name="name">Normalization</s>
+            <d name="executionNodes">
+              <d name="TalairachFromNormalization">
+                <true name="selected"/>
+                <s name="name">Talairach Transformation From Normalization</s>
+                <d name="parameters">
+                  <d name="default">
+                    <s name="normalized_referential">/casa/install/share/brainvisa-share-5.0/registration/Talairach-MNI_template-SPM.referential</s>
+                    <s name="normalization_transformation">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition_TO_Talairach-MNI.trm</s>
+                    <s name="t1mri">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.nii.gz</s>
+                    <s name="acpc_referential">/casa/install/share/brainvisa-share-5.0/registration/Talairach-AC_PC-Anatomist.referential</s>
+                    <s name="commissure_coordinates">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.APC</s>
+                    <l length="1" name="transform_chain_ACPC_to_Normalized">
+                      <s>/casa/install/share/brainvisa-share-5.0/transformation/talairach_TO_spm_template_novoxels.trm</s>
+                    </l>
+                    <s name="Talairach_transform">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition_TO_Talairach-ACPC.trm</s>
+                    <s name="source_referential">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition.referential</s>
+                  </d>
+                  <d name="selected">
+                  </d>
+                </d>
+                <d name="executionNodes">
+                </d>
+              </d>
+              <d name="Normalization">
+                <true name="selected"/>
+                <s name="name">Normalization pipeline</s>
+                <d name="parameters">
+                  <d name="default">
+                    <n name="init_translation_origin">0</n>
+                    <s name="reoriented_t1mri">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.nii.gz</s>
+                    <none name="commissures_coordinates"/>
+                    <none name="output_commissures_coordinates"/>
+                    <s name="transformation">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition_TO_Talairach-MNI.trm</s>
+                    <false name="allow_flip_initial_MRI"/>
+                  </d>
+                  <d name="selected">
+                    <s name="t1mri">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.nii.gz</s>
+                  </d>
+                </d>
+                <d name="executionNodes">
+                  <d name="Normalization_AimsMIRegister">
+                    <true name="selected"/>
+                    <s name="name">Anatomy Normalization (using AimsMIRegister)</s>
+                    <d name="parameters">
+                      <d name="default">
+                        <s name="normalized_anatomy_data">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/normalized_AimsMIRegister_SUBJECT.nii.gz</s>
+                        <s name="mni_to_acpc">/casa/install/share/brainvisa-share-5.0/transformation/talairach_TO_spm_template_novoxels.trm</s>
+                        <s name="transformation_to_ACPC">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition_TO_Talairach-ACPC.trm</s>
+                        <n name="smoothing">1.0</n>
+                        <s name="transformation_to_MNI">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition_TO_Talairach-MNI.trm</s>
+                        <none name="transformation_to_template"/>
+                        <s name="anatomical_template">/casa/install/share/brainvisa-share-5.0/anatomical_templates/MNI152_T1_2mm.nii.gz</s>
+                      </d>
+                      <d name="selected">
+                        <s name="anatomy_data">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.nii.gz</s>
+                      </d>
+                    </d>
+                    <d name="executionNodes">
+                    </d>
+                  </d>
+                </d>
+              </d>
+            </d>
+          </d>
+        </d>
+      </d>
+      <d name="TalairachTransformation">
+        <false name="selected"/>
+        <s name="name">Talairach transformation from manual AC/PC</s>
+        <d name="parameters">
+          <d name="default">
+            <s name="split_mask">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/segmentation/voronoi_SUBJECT.nii.gz</s>
+            <s name="commissure_coordinates">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/SUBJECT.APC</s>
+            <s name="Talairach_transform">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/registration/RawT1-SUBJECT_default_acquisition_TO_Talairach-ACPC.trm</s>
+          </d>
+          <d name="selected">
+          </d>
+        </d>
+        <d name="executionNodes">
+        </d>
+      </d>
+      <d name="SulcalMorphometry">
+        <true name="selected"/>
+        <s name="name">Sulci graph morphometry by subject</s>
+        <d name="parameters">
+          <d name="default">
+            <s name="sulcal_morpho_measures">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/SUBJECT_default_session_auto_sulcal_morphometry.csv</s>
+            <s name="use_attribute">label</s>
+            <s name="sulci_file">/casa/install/share/brainvisa-share-5.0/nomenclature/translation/sulci_default_list.json</s>
+            <s name="left_sulci_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/LSUBJECT_default_session_auto.arg</s>
+            <s name="right_sulci_graph">BVDIR/subjects/SUBJECT/t1mri/default_acquisition/default_analysis/folds/3.1/default_session_auto/RSUBJECT_default_session_auto.arg</s>
+          </d>
+          <d name="selected">
+          </d>
+        </d>
+        <d name="executionNodes">
+        </d>
+      </d>
+    </d>
+  </d>
+</f>
+</minf>
