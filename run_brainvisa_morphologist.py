@@ -40,7 +40,7 @@ def folder_creation(SUBJECT):
 	# Non sono sicuro sia corretto definire il database per ogni soggetto.
 	DATABASE_PATH = BVDIR # os.path.join(os.path.dirname(os.path.realpath(__file__)), 'database')
 	if not os.path.exists(DATABASE_PATH):
-	 	create_database(DATABASE_PATH)
+		create_database(DATABASE_PATH)
 
 
 def create_database(DATABASE_PATH):
@@ -146,7 +146,6 @@ def main():
 
 			#Brainvisa pipeline
 			print(f'*** {sbj} Morphologist pipeline started ***\n')
-			create_database(sbj)
 			folder_creation(sbj)
 			convert_freesurfer_to_brainvisa(sbj)
 			#run_morphologist(sbj)
@@ -158,7 +157,6 @@ def main():
 		
 		#Brainvisa pipeline
 		print(f'*** {sbj} Morphologist pipeline started ***\n')
-		create_database(sbj) # Definirei il database solo per BVDIR
 		folder_creation(sbj)
 		convert_freesurfer_to_brainvisa(sbj)
 		run_morphologist(sbj)
