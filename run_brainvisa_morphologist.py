@@ -1,16 +1,17 @@
 import os
 import argparse
+import glob
 
 DEBUG = True
 
 if DEBUG:
 	# Main folders testing
-	MAINDIR = './' #Scripts Folder
-	BVDIR = '/home/zaffaro/Desktop/kki_bv_database' # Folder containing subjects processed with brainvisa
+	MAINDIR = '/ifs/loni/faculty/njahansh/nerds/FABRIZIO/ENIGMA_SULCI53/ENIGMA_BV45/sulcus-parameterization-pipeline/' #Scripts Folder
+	BVDIR = '/ifs/loni/faculty/njahansh/nerds/FABRIZIO/ABCD/recomT1/bv_dir_final2/' # Folder containing subjects processed with brainvisa
 	#FSDIR = '/home/zaffaro/Desktop/fs_subjects' # INPUTS, folder containing subjects processed with freesurfer
-	FSDIR = '/home/zaffaro/Desktop/sbj2'
+	FSDIR = '/ifs/loni/faculty/njahansh/nerds/FABRIZIO/ABCD/recomT1/fs71_4mb/'
 	#BVHOME = 'brainvisa-4.5.0-mandriva'
-	BVHOME = 'brainvisa-5.0.3'
+	BVHOME = '/ifs/loni/faculty/njahansh/nerds/FABRIZIO/ENIGMA_SULCI53/brainvisa-5.0.3/'
 	BV_VER = 5
 	scriptDIR = os.path.join(BVDIR, 'BV_scripts')
 else:
@@ -36,9 +37,10 @@ def folder_creation(SUBJECT):
 		os.makedirs(os.path.join(BVDIR, 'subjects', SUBJECT, 't1mri/default_acquisition/default_analysis/segmentation'))
 	if not os.path.exists(scriptDIR):
 		os.makedirs(scriptDIR)
-	DATABASE_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'database')
+	# Non sono sicuro sia corretto definire il database per ogni soggetto.
+	DATABASE_PATH = BVDIR # os.path.join(os.path.dirname(os.path.realpath(__file__)), 'database')
 	if not os.path.exists(DATABASE_PATH):
-		create_database(DATABASE_PATH)
+	 	create_database(DATABASE_PATH)
 
 
 def create_database(DATABASE_PATH):
@@ -56,7 +58,9 @@ def create_database(DATABASE_PATH):
 	f_in.close()
 	f_out.close()
 
-	os.system(f'{BVHOME}/bin/bv axon-runprocess {file_parsed_template_path}')
+	# the scriptDIR has to be the current working directory to run bvproc scripts
+	os.chdir(scriptDIR)
+	os.system(f'{BVHOME}/bin/bv axon-runprocess --enabledb {file_parsed_template_path}')
 
 
 def convert_freesurfer_to_brainvisa(SUBJECT):
@@ -81,6 +85,8 @@ def convert_freesurfer_to_brainvisa(SUBJECT):
 	f_in.close()
 	f_out.close()
 
+	# the scriptDIR has to be the current working directory to run bvproc scripts
+	os.chdir(scriptDIR)
 	#os.system(f'{BVHOME}/bin/brainvisa -r {file_parsed_template_path}  --enable-db')
 	os.system(f'{BVHOME}/bin/bv axon-runprocess --enabledb {file_parsed_template_path}')
 
@@ -105,7 +111,18 @@ def run_morphologist(SUBJECT):
 	f_in.close()
 	f_out.close()
 
+	# the scriptDIR has to be the current working directory to run bvproc scripts
+	os.chdir(scriptDIR)
 	os.system(f'{BVHOME}/bin/bv axon-runprocess {file_parsed_template_path}')
+
+def remove_lock(BVDIR,subj):
+
+	subj_dir= os.path.join(BVDIR, 'subjects',subj)
+	for root, dirs, files in os.walk(subj_dir):
+		for file in files:
+			if (file.endswith(".lock")):
+				print(os.path.join(root, file))
+				os.remove(os.path.join(root, file))
 
 
 def main():
@@ -124,20 +141,31 @@ def main():
 		subjects = [f for f in os.listdir(subjects_path) if (os.path.isdir(os.path.join(subjects_path, f)))]
 
 		for sbj in subjects:
+			# remove .lcok files
+			remove_lock(BVDIR, sbj)
+
 			#Brainvisa pipeline
 			print(f'*** {sbj} Morphologist pipeline started ***\n')
-			folder_creation(sbj)
+			create_database(sbj)
 			folder_creation(sbj)
 			convert_freesurfer_to_brainvisa(sbj)
 			#run_morphologist(sbj)
+			print(f'*** {sbj} Removing .lock files ***\n')
+			#remove .lcok files
+			remove_lock(BVDIR, sbj)
 	else:
 		sbj =  args.subject
 		
 		#Brainvisa pipeline
 		print(f'*** {sbj} Morphologist pipeline started ***\n')
+		create_database(sbj) # Definirei il database solo per BVDIR
 		folder_creation(sbj)
 		convert_freesurfer_to_brainvisa(sbj)
 		run_morphologist(sbj)
+
+		print(f'*** {sbj} Removing .lock files ***\n')
+		#remove .lcok files
+		remove_lock(BVDIR, sbj)
 
 if __name__ == '__main__':
 	main()

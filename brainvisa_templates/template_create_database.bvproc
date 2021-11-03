@@ -23,7 +23,7 @@
         <false name="temporary"/>
       </d>
       <d name="selected">
-        <s name="database_directory">DATABASE_PATH</s>
+        <s name="database_directory">/host/DATABASE_PATH</s>
       </d>
     </d>
   </d>
